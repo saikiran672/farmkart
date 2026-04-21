@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products - FarmKart</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="navbar" id="navbar"></header>
+
+  <main>
+    <div class="page-header">
+      <h1>Fresh Products</h1>
+      <p>Browse farm-fresh produce from local farmers</p>
+    </div>
+
+    <div class="container">
+      <div class="filter-bar">
+        <input type="text" class="search-input" id="search-input" placeholder="Search products...">
+        <button class="filter-btn active" data-category="all">All</button>
+        <button class="filter-btn" data-category="vegetables">Vegetables</button>
+        <button class="filter-btn" data-category="fruits">Fruits</button>
+        <button class="filter-btn" data-category="grains">Grains</button>
+        <button class="filter-btn" data-category="dairy">Dairy</button>
+        <button class="filter-btn" data-category="herbs">Herbs</button>
+        <button class="filter-btn" data-category="other">Other</button>
+      </div>
+
+      <div class="product-grid" id="products-container">
+        <div class="spinner"></div>
+      </div>
+
+      <div style="text-align: center; padding: 24px 0;" id="pagination"></div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border: none; margin: 0; padding: 0;">
+        <p>&copy; 2024 FarmKart. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/nav.js"></script>
+  <script src="/js/products.js"></script>
+</body>
+</html>
