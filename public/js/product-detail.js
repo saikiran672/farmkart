@@ -13,7 +13,7 @@
         <div class="empty-icon">&#x2753;</div>
         <h3>Product not found</h3>
         <p>No product ID specified.</p>
-        <a href="/products.html" class="btn btn-primary">Browse Products</a>
+        <a href="./products.html" class="btn btn-primary">Browse Products</a>
       </div>
     `;
     return;
@@ -27,7 +27,7 @@
         <div class="empty-icon">&#x2753;</div>
         <h3>Product not found</h3>
         <p>${error || 'This product may have been removed.'}</p>
-        <a href="/products.html" class="btn btn-primary">Browse Products</a>
+        <a href="./products.html" class="btn btn-primary">Browse Products</a>
       </div>
     `;
     return;
@@ -63,12 +63,12 @@
           </div>
           <button class="btn btn-primary btn-lg" id="add-to-cart-btn" onclick="addToCart('${product._id}')">Add to Cart</button>
         ` : !isAuthenticated() ? `
-          <p style="margin-top: 24px;"><a href="/login.html" class="btn btn-primary">Login to Purchase</a></p>
+          <p style="margin-top: 24px;"><a href="./login.html" class="btn btn-primary">Login to Purchase</a></p>
         ` : !inStock ? `
           <p style="margin-top: 24px; color: var(--color-danger); font-weight: 600;">This product is currently out of stock.</p>
         ` : ''}
         <div style="margin-top: 24px;">
-          <a href="/products.html" class="btn btn-outline btn-sm">&larr; Back to Products</a>
+          <a href="./products.html" class="btn btn-outline btn-sm">&larr; Back to Products</a>
         </div>
       </div>
     </div>
@@ -111,3 +111,4 @@ async function addToCart(productId) {
     updateCartBadge();
   }
 }
+

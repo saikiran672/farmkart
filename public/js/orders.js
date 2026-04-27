@@ -26,7 +26,7 @@
           <div class="empty-icon">&#x1F4E6;</div>
           <h3>No orders yet</h3>
           <p>You haven't placed any orders yet. Start shopping!</p>
-          <a href="/products.html" class="btn btn-primary">Browse Products</a>
+          <a href="./products.html" class="btn btn-primary">Browse Products</a>
         </div>
       `;
       return;
@@ -68,3 +68,4 @@
     }).join('');
   }
 })();
+

@@ -24,7 +24,7 @@ async function apiFetch(endpoint, options = {}) {
     if (res.status === 401) {
       localStorage.removeItem('token');
       localStorage.removeItem('user');
-      window.location.href = '/login.html';
+      window.location.href = './login.html';
       return { data: null, error: 'Session expired. Please login again.' };
     }
 
@@ -54,18 +54,18 @@ function isAuthenticated() {
 function logout() {
   localStorage.removeItem('token');
   localStorage.removeItem('user');
-  window.location.href = '/index.html';
+  window.location.href = './index.html';
 }
 
 function requireAuth(role) {
   if (!isAuthenticated()) {
-    window.location.href = '/login.html';
+    window.location.href = './login.html';
     return false;
   }
   if (role) {
     const user = getUser();
     if (!user || user.role !== role) {
-      window.location.href = '/index.html';
+      window.location.href = './index.html';
       return false;
     }
   }
@@ -98,3 +98,4 @@ function showToast(message, type = 'success') {
 function formatPrice(price) {
   return '\u20B9' + Number(price).toFixed(2);
 }
+

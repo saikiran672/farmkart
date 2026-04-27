@@ -54,7 +54,7 @@
             <span style="color: var(--color-text-light); font-size: 0.85rem;">
               ${product.quantity > 0 ? `${product.quantity} ${product.unit} available` : '<span style="color: var(--color-danger);">Out of stock</span>'}
             </span>
-            <a href="/product-detail.html?id=${product._id}" class="btn btn-primary btn-sm">View Details</a>
+            <a href="./product-detail.html?id=${product._id}" class="btn btn-primary btn-sm">View Details</a>
           </div>
         </div>
       </div>
@@ -104,3 +104,4 @@
 
   loadProducts();
 })();
+

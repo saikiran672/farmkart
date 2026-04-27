@@ -26,7 +26,7 @@
           <div class="empty-icon">&#x1F6D2;</div>
           <h3>Your cart is empty</h3>
           <p>Browse our products and add some items to your cart.</p>
-          <a href="/products.html" class="btn btn-primary">Browse Products</a>
+          <a href="./products.html" class="btn btn-primary">Browse Products</a>
         </div>
       `;
       return;
@@ -167,7 +167,8 @@
     if (typeof updateCartBadge === 'function') updateCartBadge();
 
     setTimeout(() => {
-      window.location.href = '/orders.html';
+      window.location.href = './orders.html';
     }, 1500);
   };
 })();
+

@@ -33,9 +33,10 @@
           <span style="color: var(--color-text-light); font-size: 0.85rem;">
             ${product.farmer ? product.farmer.name : 'Local Farmer'}
           </span>
-          <a href="/product-detail.html?id=${product._id}" class="btn btn-primary btn-sm">View Details</a>
+          <a href="./product-detail.html?id=${product._id}" class="btn btn-primary btn-sm">View Details</a>
         </div>
       </div>
     </div>
   `).join('');
 })();
+

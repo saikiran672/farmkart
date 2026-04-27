@@ -9,28 +9,28 @@
 
   let navLinksHTML = '';
 
-  navLinksHTML += `<a href="/index.html">Home</a>`;
-  navLinksHTML += `<a href="/products.html">Products</a>`;
-  navLinksHTML += `<a href="/about.html">About</a>`;
-  navLinksHTML += `<a href="/contact.html">Contact</a>`;
+  navLinksHTML += `<a href="./index.html">Home</a>`;
+  navLinksHTML += `<a href="./products.html">Products</a>`;
+  navLinksHTML += `<a href="./about.html">About</a>`;
+  navLinksHTML += `<a href="./contact.html">Contact</a>`;
 
   if (authenticated && user) {
     if (user.role === 'customer') {
-      navLinksHTML += `<a href="/cart.html" class="cart-badge">Cart</a>`;
-      navLinksHTML += `<a href="/orders.html">My Orders</a>`;
+      navLinksHTML += `<a href="./cart.html" class="cart-badge">Cart</a>`;
+      navLinksHTML += `<a href="./orders.html">My Orders</a>`;
     }
     if (user.role === 'farmer') {
-      navLinksHTML += `<a href="/farmer-dashboard.html">Dashboard</a>`;
+      navLinksHTML += `<a href="./farmer-dashboard.html">Dashboard</a>`;
     }
     navLinksHTML += `<a href="#" class="btn-nav" id="logout-btn">Logout</a>`;
   } else {
-    navLinksHTML += `<a href="/login.html">Login</a>`;
-    navLinksHTML += `<a href="/signup.html" class="btn-nav">Sign Up</a>`;
+    navLinksHTML += `<a href="./login.html">Login</a>`;
+    navLinksHTML += `<a href="./signup.html" class="btn-nav">Sign Up</a>`;
   }
 
   navbar.innerHTML = `
     <div class="container">
-      <a href="/index.html" class="logo">FarmKart</a>
+      <a href="./index.html" class="logo">FarmKart</a>
       <nav class="nav-links" id="nav-links">${navLinksHTML}</nav>
       <button class="hamburger" id="hamburger" aria-label="Toggle menu">
         <span></span><span></span><span></span>
@@ -88,3 +88,4 @@ async function updateCartBadge() {
     }
   }
 }
+

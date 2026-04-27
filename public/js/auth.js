@@ -18,9 +18,9 @@
   if (isAuthenticated()) {
     const user = getUser();
     if (user && user.role === 'farmer') {
-      window.location.href = '/farmer-dashboard.html';
+      window.location.href = './farmer-dashboard.html';
     } else {
-      window.location.href = '/index.html';
+      window.location.href = './index.html';
     }
     return;
   }
@@ -60,9 +60,9 @@
       localStorage.setItem('user', JSON.stringify(data.user));
 
       if (data.user.role === 'farmer') {
-        window.location.href = '/farmer-dashboard.html';
+        window.location.href = './farmer-dashboard.html';
       } else {
-        window.location.href = '/index.html';
+        window.location.href = './index.html';
       }
     });
   }
@@ -117,10 +117,11 @@
       localStorage.setItem('user', JSON.stringify(data.user));
 
       if (data.user.role === 'farmer') {
-        window.location.href = '/farmer-dashboard.html';
+        window.location.href = './farmer-dashboard.html';
       } else {
-        window.location.href = '/index.html';
+        window.location.href = './index.html';
       }
     });
   }
 })();
+

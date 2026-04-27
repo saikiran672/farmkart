@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: farmkart
+    env: node
+    plan: starter
+    branch: main
+    buildCommand: npm install
+    startCommand: npm start
+    root: .
+    envVars:
+      - key: NODE_ENV
+        value: production
+    healthCheckPath: /
