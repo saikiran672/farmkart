@@ -7,11 +7,7 @@ const connectDB = async () => {
     return cached;
   }
 
-  const mongoURI = process.env.MONGODB_URI || process.env.MONGO_URI || process.env.DATABASE_URL;
-  if (!mongoURI) {
-    console.error('MongoDB connection error: environment variable MONGODB_URI, MONGO_URI, or DATABASE_URL is not defined.');
-    process.exit(1);
-  }
+  const mongoURI = process.env.MONGODB_URI || process.env.MONGO_URI || process.env.DATABASE_URL || 'mongodb://localhost:27017/famkart';
 
   try {
     cached = await mongoose.connect(mongoURI, {
