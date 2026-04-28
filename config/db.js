@@ -9,6 +9,13 @@ const connectDB = async () => {
 
   const mongoURI = process.env.MONGODB_URI || process.env.MONGO_URI || process.env.DATABASE_URL || 'mongodb://localhost:27017/famkart';
 
+const connectDB = async () => {
+  if (cached && mongoose.connection.readyState === 1) {
+    return cached;
+  }
+
+  const mongoURI = process.env.MONGODB_URI || process.env.MONGO_URI || process.env.DATABASE_URL || 'mongodb://localhost:27017/famkart';
+
   try {
     cached = await mongoose.connect(mongoURI, {
       useNewUrlParser: true,
@@ -18,8 +25,15 @@ const connectDB = async () => {
     return cached;
   } catch (err) {
     console.error(`MongoDB connection error: ${err.message}`);
-    process.exit(1);
+    // In production, don't exit process, let it retry
+    if (process.env.NODE_ENV === 'production') {
+      console.error('Failed to connect to MongoDB in production, but continuing...');
+      return null;
+    } else {
+      process.exit(1);
+    }
   }
+};
 };
 
 module.exports = connectDB;

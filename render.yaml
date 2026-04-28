@@ -10,4 +10,8 @@ services:
     envVars:
       - key: NODE_ENV
         value: production
+      - key: MONGODB_URI
+        sync: false  # Set this in Render dashboard with your MongoDB Atlas URI
+      - key: JWT_SECRET
+        generateValue: true  # Render will generate a random secret
     healthCheckPath: /
